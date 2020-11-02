@@ -20,16 +20,27 @@ public class UniqueNumbers {
         int[] uniqueNumbers = new int[numbers.length];
         int count = 0;
 
-        for (int index = 0; index < numbers.length; index++){
-        
-          if(uniqueNumbers[index] == numbers[index]){
-            count++;
-            if(count> 0)
-          }
-        }
-        // Find unique numbers in numbers
 
+        for(int index = 0; index < numbers.length; index++){
+          boolean found = false;
+          for (int i = 0; i<uniqueNumbers.length; i++){ 
+        if(numbers[index] == uniqueNumbers[i] ){
+          found = true;
+          
+
+        } 
+
+      }
+          if(found==false){
+            uniqueNumbers[count]= numbers[index];
+            count++;
+          }
+          
+
+        
+        }
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
         System.out.println("Unique numbers: " + uniqueNumbersAsString);
     }
 }
+
